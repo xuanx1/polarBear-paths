@@ -1,6 +1,6 @@
-# PolarBearPaths
+# [PolarBearPaths](https://xuanx1.github.io/polarBear-paths/PolarBearPaths.html)
 
-A wildlife–vessel collision-risk console for the Svalbard / Barents Sea region.
+A wildlife–vessel collision-risk [console](https://xuanx1.github.io/polarBear-paths/PolarBearPaths.html) for the Svalbard / Barents Sea region.
 Visualises collared polar bears, AIS-style vessel tracks, sea-ice extent,
 glacier outlines, real per-ship-type shipping lanes, and an **A*-based vessel
 reroute** that detours around bear envelopes (current position + past track +
