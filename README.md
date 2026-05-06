@@ -6,10 +6,7 @@ glacier outlines, real per-ship-type shipping lanes, and an **A*-based vessel
 reroute** that detours around bear envelopes (current position + past track +
 24 h forecast) while respecting land.
 
-This README documents **all data sources** used and the projection used to
-place every feature at its real geographic position.
-
----
+<img width="1918" height="1062" alt="Screenshot 2026-05-06 174749" src="https://github.com/user-attachments/assets/79361940-3137-4826-a5b1-bdd8f33102de" />
 
 ## Files
 
@@ -30,7 +27,7 @@ place every feature at its real geographic position.
 | `tweaks-panel.jsx` | Tweaks UI primitives. |
 | `app.jsx` | Root component, layout, time scrubber state, debounced reroute recompute. |
 
-### Data pipeline (decoupled)
+### Data pipeline
 
 The five `*-data.js` files (`svalbard-rings.js`, `seaice-data.js`,
 `glaciers-data.js`, `vessels-data.js`, `lanes-data.js`) are pre-generated
@@ -276,24 +273,6 @@ The right panel uses **per-vessel** reroute data (`vessel.reroute`), so
 clicking any vessel shows its own proposed detour or an honest
 "no useful reroute — geographic constraint" message (e.g. Greg Mortimer
 in Storfjorden, walled in by Spitsbergen / Edgeøya / Barentsøya).
-
----
-
-## UI / interactivity
-
-- **Pan + zoom on the map** — drag to pan, wheel to zoom 1×–8×. Pan is
-  clamped so the visible window can never leave the 1000×1000 canvas.
-- **Time scrubber** sits in the bottom-right of the map, stacked above the
-  Bears / Vessels / Risk-zones counts chip-row. Play button auto-advances
-  through `T+00h … T+23h` at 600 ms per step.
-- **Map settings flyout** sits in the bottom-left of the map, stacked above
-  the scale bar — palette, time-of-day, risk visualisation, reroute
-  presentation, density.
-- **Compass rose** in the top-right — inline SVG with cardinal ticks,
-  two-tone diamond needle (accent north / ink south), N letter inside the ring.
-- **Vessel and bear icons rotate parallel to their travel direction** —
-  rotation derived from local segment direction at the current time index,
-  with a `cos(lat)` correction for longitude convergence.
 
 ---
 
